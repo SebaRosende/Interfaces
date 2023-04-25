@@ -1,0 +1,83 @@
+.segundos {
+ 
+    position:absolute;
+
+    /* Ubicación */
+    top: 23%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+
+    /* Estructura */
+    width: 1%;
+    height: 30%;
+    background-color: rgb(238, 17, 17);
+    
+
+    /* Animación lineal infinita + la regla @keyframes */
+    animation: segundos 60s linear 0s infinite;
+    /* Cambia el centro de giro a la parte inferior del elemento */
+    transform-origin:bottom; 
+    
+}
+
+@keyframes segundos { /*estados inicial y final de la animación*/
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+
+.minutos {
+    position: absolute;
+    top: 28%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+   
+    width: 1.5%;
+    height: 25%;
+    background-color: rgb(0, 0, 0);
+    animation: minutos 3600s steps(60, end) forwards 0s infinite;
+    transform-origin: bottom;
+
+}
+
+@keyframes minutos {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+   
+}
+
+.horas {   
+    position: absolute;
+    top: 37%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 2%;
+    height: 15%;
+    background-color: rgb(0, 0, 0);   
+    /*Animación de dirección unica, de 12 pasos y repite el bucle infinitamente*/
+    animation: horas 86400s steps(12, end) forwards 0s infinite;/*24hs, doce pasos*/
+    transform-origin: bottom;
+}
+
+@keyframes horas {
+    0% { transform: rotate(30deg);}
+    100%{transform: rotate(360deg);} 
+}
+
+
+
+.estructura img {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+   
+}
