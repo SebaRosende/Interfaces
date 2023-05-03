@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint</title>
+</head>
+<body onload="main()">
+
+    <canvas id="canvas" height="500" width="500" style="border: 1px solid rebeccapurple"></canvas>       
+    
+    <br>
+   
+    <input id="color" type="color">
+    <button id="lapiz"><img src="img/lapiz.png" width="50" height="40" alt="lapiz"></button>
+    <button id="goma"><img src="img/goma.png" width="50" height="40" alt="goma"></button>
+    <button id="hojaVacia"><img src="img/hoja.png" width="50" height="40" alt="hoja"></button>
+    <button id="guardar"><img src="img/diskete.jpg" width="50" height="40" alt="diskete"></button>
+    <br>
+    <input type="file" name="" id="archivo">
+    <button id="recuperar">Reestabler imagen</button>
+    <br>
+    <button id="negativo">Negativo</button>
+    <button id="sepia">Sepia</button>
+    <button id="byn">Blanco y Negro</button>
+    <button id="brillo">Brillo</button>
+    <button id="saturar">Saturación</button>
+    <button id="sobel">Sobel</button>
+    <button id="blur">Blur</button>
+
+
+
+    <script src="ppal.js"></script>
+    <script src="filtrosEspeciales.js"></script>
+    <script src="filtrosBasicos.js"></script>
+    <script src="convertirColor.js"></script>
+    <script src="elementoLib.js"></script>
+ 
+   
+  
+</body>
+
