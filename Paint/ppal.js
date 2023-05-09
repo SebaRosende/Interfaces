@@ -8,15 +8,17 @@ let mouseUp = true;
 let mouseDown = false;
 let lapiz = null;
 let lapizClic = true;
+let espesorLapiz = 5;
 let gomaClic;
 let color;
 let colorGoma = 'white';
+let espesorGoma=8;
 let imagen = null;
 let imagenBackup = null;
 
 //Comportamiento del mouse
 canvas.addEventListener('mousedown', (e) => {
-    lapiz = new Lapiz(e.layerX, e.layerY, color, contexto, '5');
+    lapiz = new Lapiz(e.layerX, e.layerY, color, contexto, espesorLapiz);
     mouseDown = true;
     mouseUp = false;
 })
@@ -48,7 +50,7 @@ document.getElementById('lapiz').addEventListener("click", (e) => {
 
 //GOMA
 document.getElementById('goma').addEventListener("click", (e) => {
-    goma = new Goma(e.layerX, e.layerY, colorGoma, contexto, '8')
+    goma = new Goma(e.layerX, e.layerY, colorGoma, contexto, espesorGoma)
     gomaClic = true;
     lapizClic = false;
 })
@@ -69,7 +71,7 @@ function guardarArchivo() {
 //CARGAR ARCHIVO
 let arhivo_input = document.getElementById('archivo');
 arhivo_input.addEventListener("change", (e) => {
-    imagen = new Image();
+    imagen = new NuevaClaseImagen();
     imagen.src = URL.createObjectURL(e.target.files[0]);
     imagenBackup = imagen;
     imagen.onload = function () {
@@ -95,6 +97,26 @@ document.getElementById('recuperar').addEventListener("click", (e) => {
 function reestablecerImagen(){
     contexto.drawImage(imagenBackup, 0, 0, canvasWidth, canvasHeight);
 }
+
+//DAR BRILLO A IMAGEN
+document.getElementById('brillo').addEventListener("click", (e) => {
+   imagen.cambiarBrillo();
+ })
+
+//PASAR IMAGEN A NEGATIVO 
+document.getElementById('negativo').addEventListener("click", (e) => {
+    imagen.negativo();
+})
+
+//PASAR IMAGEN A BLANCO Y NEGRO
+document.getElementById('byn').addEventListener("click", (e) => {
+    imagen.cambiarByn();
+})
+//PASAR IMAGEN A SEPIA
+document.getElementById('sepia').addEventListener("click", (e) => {
+    imagen.cambiarSepia();
+})
+
 
 
 //PRINCIPAL
